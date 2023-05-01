@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import PluginsList from '../plugin-list'
+// import PluginsList from '../plugin-list'
 import styles from './search-list.module.css'
-import allPlugins from 'plugins'
+// import allPlugins from 'plugins'
 import { useSearch } from 'lib/search-context'
 
 export default () => {
@@ -17,7 +17,7 @@ export default () => {
         <Head>
           <title>{`Hyper™ Store - Searching for "${query}"`}</title>
         </Head>
-        <PluginsList plugins={plugins} query={query} />
+        {/* <PluginsList plugins={plugins} query={query} /> */}
       </>
     )
   }

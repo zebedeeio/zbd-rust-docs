@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import SearchBar from './search-bar'
 import { Arrow, Logo } from '../icons'
 import styles from './header.module.css'
 
@@ -9,16 +8,15 @@ const ActiveLink = ({ href, children }) => {
   const { pathname } = useRouter()
 
   return (
-    (<Link
+    <Link
       href={href}
       className={`${styles.link} ${
         pathname.split('/')[1] === href.split('/')[1] ? styles.active : ''
-      }`}>
-
+      }`}
+    >
       {children}
-
-    </Link>)
-  );
+    </Link>
+  )
 }
 
 export default () => {
@@ -26,62 +24,65 @@ export default () => {
 
   const toggle = () => setMobileNavShown(!mobileNavShown)
 
-  return <>
-    <header className={styles.header}>
-      <Link href="/" className={styles.logo} aria-label="Hyper logo">
+  return (
+    <>
+      <header className={styles.header}>
+        <Link href="/" className={styles.logo} aria-label="Hyper logo">
+          <Logo width={31} height={23} />
+        </Link>
 
-        <Logo width={31} height={23} />
+        <nav className={styles.desktopNav}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/zebedeeio/zbd-node"
+            className={styles.link}
+          >
+            @zbd/node
+          </a>
+          <ActiveLink href="/#setup">Setup</ActiveLink>
+          <ActiveLink href="/#api">API</ActiveLink>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://zbd-node-playground.zebedee.io"
+            className={styles.link}
+          >
+            Playground
+          </a>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://dashboard.zebedee.io"
+            className={styles.link}
+          >
+            Developer&nbsp;Dashboard
+          </a>
+        </nav>
 
-      </Link>
+        <div className={styles.rightNav}>
+          <a
+            href="https://vercel.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.vercel}
+          >
+            ▲
+          </a>
+        </div>
 
-      <nav className={styles.desktopNav}>
-        <ActiveLink href="/plugins">Plugins</ActiveLink>
-        <ActiveLink href="/themes">Themes</ActiveLink>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/vercel/hyper"
-          className={styles.link}
-        >
-          GitHub
-        </a>
-        <ActiveLink href="/#installation">Download</ActiveLink>
-        <ActiveLink href="/blog">Blog</ActiveLink>
+        <span className={styles.toggle} onClick={toggle}>
+          <Arrow height={14} width={26} />
+        </span>
+      </header>
+
+      <nav
+        className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}
+      >
+        <Link href="/plugins">Setup</Link>
+        <Link href="/themes">GitHub: @zbd/node</Link>
+        <Link href="/blog">Blog</Link>
       </nav>
-
-      <div className={styles.rightNav}>
-        <SearchBar />
-        <a
-          href="https://vercel.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.vercel}
-        >
-          ▲
-        </a>
-      </div>
-
-      <span className={styles.toggle} onClick={toggle}>
-        <Arrow height={14} width={26} />
-      </span>
-    </header>
-
-    <nav
-      className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}
-    >
-      <Link href="/plugins">
-        Plugins
-      </Link>
-      <Link href="/themes">
-        Themes
-      </Link>
-      <Link href="/store/submit">
-        Submit
-      </Link>
-      <Link href="/blog">
-        Blog
-      </Link>
-      <SearchBar />
-    </nav>
-  </>;
+    </>
+  )
 }

@@ -1,4 +1,3 @@
-import { Apple, Linux, Windows } from '../icons'
 import styles from './footer.module.css'
 
 export default () => (
@@ -8,31 +7,19 @@ export default () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/vercel/hyper/releases"
+          href="https://github.com/zebedeeio/zbd-node/releases"
         >
           Changelog
         </a>
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/vercel/hyper"
+          href="https://github.com/zebedeeio/zbd-node"
         >
           GitHub
         </a>
         <span>
           License:&nbsp;<b>MIT</b>
-        </span>
-        <span className={styles.download}>
-          Download for:
-          <a href="/#installation" aria-label="Apple">
-            <Apple size={16} />
-          </a>
-          <a href="/#installation" aria-label="Windows">
-            <Windows size={16} />
-          </a>
-          <a href="/#installation" aria-label="Linux">
-            <Linux size={16} />
-          </a>
         </span>
       </div>
 

@@ -1,9 +1,9 @@
 {
-  "name": "hyper-site",
+  "name": "zbd-node-docs",
   "private": true,
-  "version": "1.3.0",
-  "description": "The official website for the Hyper terminal",
-  "repository": "vercel/hyper-site",
+  "version": "1.0.0",
+  "description": "The official documentation website for the ZEBEDEE Node.js SDK",
+  "repository": "zebedeeio/zbd-node-docs",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
