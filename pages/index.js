@@ -26,7 +26,7 @@ export default function HomePage() {
        */}
       <div className={heroStyles.root}>
         <img
-          src={'https://cdn.zebedee.io/an/zbd/zbd-circle-github.png'}
+          src={'/zbd-node-logo.png'}
           alt="ZEBEDEE Logo"
           className={heroStyles.logoWrapper}
         />

@@ -27,47 +27,46 @@ export default () => {
   return (
     <>
       <header className={styles.header}>
-        <Link href="/" className={styles.logo} aria-label="Hyper logo">
-          <Logo width={31} height={23} />
-        </Link>
+        <div className={styles.logo}>
+          <a
+            href="https://zebedee.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.vercel}
+          >
+            <img src="/zebedee-logo.png" className={styles.zebedeeLogo} />
+          </a>
+        </div>
 
         <nav className={styles.desktopNav}>
+          <ActiveLink href="/#setup">Installation</ActiveLink>
+          <ActiveLink href="/#api">API</ActiveLink>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://github.com/zebedeeio/zbd-node"
             className={styles.link}
           >
-            @zbd/node
+            GitHub&nbsp;@zbd/node
           </a>
-          <ActiveLink href="/#setup">Setup</ActiveLink>
-          <ActiveLink href="/#api">API</ActiveLink>
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://zbd-node-playground.zebedee.io"
+            href="https://playground.dev.zebedee.cloud"
             className={styles.link}
           >
             Playground
           </a>
+        </nav>
+
+        <div className={styles.rightNav}>
           <a
             target="_blank"
             rel="noopener noreferrer"
             href="https://dashboard.zebedee.io"
             className={styles.link}
           >
-            Developer&nbsp;Dashboard
-          </a>
-        </nav>
-
-        <div className={styles.rightNav}>
-          <a
-            href="https://vercel.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.vercel}
-          >
-            ▲
+            Developer&nbsp;Dashboard →
           </a>
         </div>
 

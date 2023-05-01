@@ -24,12 +24,12 @@ export default () => (
       </div>
 
       <a
+        href="https://zebedee.io"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.logo}
-        href="https://vercel.com"
+        className={styles.vercel}
       >
-        ▲
+        <img src="/zebedee-logo.png" className={styles.zebedeeLogo} />
       </a>
     </nav>
   </footer>
