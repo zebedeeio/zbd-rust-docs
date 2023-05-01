@@ -5,9 +5,9 @@ import { useSearch } from 'lib/search-context'
 
 export default ({
   children,
-  title = 'Hyper™',
-  description = 'A terminal built on web technologies',
-  image = 'https://assets.vercel.com/image/upload/v1590627842/hyper/og-image-3.png',
+  title = '@zbd/node - Node.js SDK for the ZEBEDEE API',
+  description = 'The one library you need to use ZEBEDEE API in your Node.js project. The SDK provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
+  image = 'https://i.imgur.com/WUQW255.png',
 }) => {
   const { search } = useSearch()
 
