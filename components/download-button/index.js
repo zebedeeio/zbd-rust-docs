@@ -1,19 +1,27 @@
 import styles from './download-button.module.css'
 
-const DownloadButton = () => {
+const DownloadButton = ({ buttonOne, buttonTwo }) => {
   return (
     <div className={styles.doubleWrap}>
-      <a className={styles.root} href="/#api" rel="noopener noreferrer">
-        <strong>View Documentation</strong>
-      </a>
-      <a
-        className={styles.root}
-        href="https://playground-zbd-node.zebedee.io"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <strong>Open Playground</strong>
-      </a>
+      {buttonOne && buttonOne.label && (
+        <a
+          className={styles.root}
+          href={buttonOne.url}
+          rel="noopener noreferrer"
+        >
+          <strong style={{ color: '#000' }}>{buttonOne.label}</strong>
+        </a>
+      )}
+      {buttonTwo && buttonTwo.label && (
+        <a
+          className={styles.root}
+          href={buttonTwo.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>{buttonTwo.label}</strong>
+        </a>
+      )}
     </div>
   )
 }

@@ -49,14 +49,7 @@ export default () => {
           >
             GitHub&nbsp;@zbd/node
           </a>
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://playground.dev.zebedee.cloud"
-            className={styles.link}
-          >
-            Playground
-          </a>
+          <ActiveLink href="/#playground">Playground</ActiveLink>
         </nav>
 
         <div className={styles.rightNav}>

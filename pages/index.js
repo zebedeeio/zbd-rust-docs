@@ -3,20 +3,58 @@ import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
 import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
+import { methods } from 'constants/methods'
 
-// export async function getStaticProps() {
-//   const res = await fetch(
-//     'https://api.github.com/repos/vercel/hyper/releases/latest'
-//   )
-//   const latestRelease = await res.json()
+const getEntity = (word) => {
+  const getColor = (word) => {
+    switch (word) {
+      case 'Wallet':
+        return 'rgba(82, 82, 82, 1)'
+      case 'Charge':
+        return 'rgba(121, 91, 6, 1)'
+      case 'Static Charge':
+        return 'rgba(20, 78, 6, 1)'
+      case 'Withdrawal Request':
+        return 'rgba(58, 56, 108, 1)'
+      case 'Lightning Address':
+        return 'rgba(124, 78, 134, 1)'
+      case 'ZBD Gamertag':
+        return 'rgba(121, 33, 33, 1)'
+      case 'Utility':
+        return 'rgba(104, 123, 27, 1)'
+      case 'Keysend':
+        return 'rgba(27, 106, 128, 1)'
+      case 'Payment':
+        return 'rgba(120, 37, 151, 1)'
+      default:
+        return 'rgba(82, 82, 82, 1)'
+    }
+  }
 
-//   return {
-//     props: {
-//       latestRelease,
-//     },
-//     revalidate: 60 * 60 * 24,
-//   }
-// }
+  return (
+    <div
+      style={{
+        backgroundColor: getColor(word),
+        paddingTop: 4,
+        paddingBottom: 4,
+        paddingLeft: 12,
+        paddingRight: 12,
+        borderRadius: 6,
+        width: 'auto',
+        display: 'inline-block',
+      }}
+    >
+      <span
+        style={{
+          fontSize: 12,
+          color: '#fff',
+        }}
+      >
+        {word}
+      </span>
+    </div>
+  )
+}
 
 export default function HomePage() {
   return (
@@ -38,7 +76,13 @@ export default function HomePage() {
           />
         </div>
         <div className={heroStyles.download}>
-          <DownloadButton fixedWidth />
+          <DownloadButton
+            buttonOne={{ label: 'View SDK Docs', url: '/#api' }}
+            buttonTwo={{
+              label: 'Open Playground',
+              url: 'https://playground.dev.zebedee.cloud',
+            }}
+          />
           <a className={heroStyles.other} href="#sdks">
             View other SDK options
           </a>
@@ -64,44 +108,137 @@ export default function HomePage() {
           <code>zebedee</code> in the <code>keywords</code> field in{' '}
           <code>package.json</code>.
         </p>
+        <p>
+          All you have to do to get started is install <code>@zbd/node</code> as
+          a dependency to your Node.js-based project. You can do so using{' '}
+          <code>npm</code>:
+        </p>
         <pre>
-          <code>$ npm install @zbd/node</code>
+          <code>npm install @zbd/node --save</code>
         </pre>
         <p>
           Or if you are using <code>yarn</code>:
         </p>
         <pre>
-          <code>$ yarn add @zbd/node</code>
+          <code>yarn add @zbd/node</code>
         </pre>
         <p>
-          Then edit and add it to <code>plugins</code>
+          Now let's authenticate a specific Wallet with that ZEBEDEE Project's
+          API Key.
+        </p>
+
+        {/**
+         * Authentication
+         */}
+        <h2 id="auth">
+          <a href="#auth">Authentication</a>
+        </h2>
+        <p>
+          In order to authenticate your Project Wallet with the ZEBEDEE API, you
+          will need to provide your ZEBEDEE Project's API Key to the{' '}
+          <code>@zbd/node</code> SDK.{' '}
+          <a
+            href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
+            target="_blank"
+          >
+            You can find your Project API Key in the ZEBEDEE Developer Dashboard
+          </a>
+          .
+        </p>
+        <p>
+          First you must import the <code>zbd</code> SDK client into your
+          codebase, and then instantiate it with your Project API Key (replace
+          YOUR_API_KEY_HERE below with your actual ZEBEDEE Project's API Key).
         </p>
         <pre>
           <code>
-            module.exports = {'{'}
+            import {'{'} zbd {'}'} from '@zbd/node'
             {'\n'}
             {'\n'}
-            {'  '}config: {'{'} /*... */ {'}'},{'\n'}
+            const ZBD = new zbd(<b>YOUR_API_KEY_HERE</b>){'\n'}
             {'\n'}
-            {'  '}plugins: [{'\n'}
-            {'    '}
-            <b>"hyperpower"</b>
+            const payment = await ZBD.sendPayment{'( ... )'}
             {'\n'}
-            {'  '}]{'\n'}
-            {'\n'}
-            {'}'};
           </code>
         </pre>
         <p>
-          <code>Hyper</code> will show a notification when your modules are
-          installed to .
+          You're all set. Now let's move some money at the speed of the
+          internet! Check the <a href="/#playground">Dev Playground</a> or the{' '}
+          <a href="/#api">SDK API Reference</a> below for more information on
+          how to use the <code>@zbd/node</code> SDK.
         </p>
+
+        {/**
+         * Playground
+         */}
+        <h2 id="playground">
+          <a href="#playground">Dev Playground</a>
+        </h2>
+        <p>
+          The best way to get started using the <code>@zbd/node</code> SDK for
+          the ZEBEDEE API is to check out our Dev Playground -- a web-based tool
+          that allows you to test and interact with the <code>@zbd/node</code>{' '}
+          library without writing any code.
+        </p>
+        <p>
+          The Dev Playground has built-in modules and source code showing the
+          usage of the <code>@zbd/node</code> SDK to perform Payins and Payouts
+          in Bitcoin. From creating Charges, to editing Static QR codes, to
+          sending Lightning Address payments -- there's a module for everything.
+        </p>
+        <p>
+          To make the most of the Dev Playground, clone the source code
+          repository to your local machine and{' '}
+          <a
+            href="https://github.com/zebedeeio/nextjs-zebedee-starter/blob/main/README.md"
+            target="_blank"
+          >
+            follow the instructions in the README
+          </a>{' '}
+          to get started.
+        </p>
+        <pre>
+          <code>
+            git clone https://github.com/zebedeeio/nextjs-zebedee-starter.git
+          </code>
+        </pre>
+        <p>
+          Once you've connected your ZEBEDEE API Key as a local environment
+          variable and sstarted the Next.js server, you can open your local Dev
+          Playground at{' '}
+          <code>
+            <a href="http://localhost:3000/playground" target="_blank">
+              localhost:3000/playground
+            </a>
+          </code>
+          .
+        </p>
+        <p>
+          You may also check out a LIVE running version of the Dev Playground{' '}
+          <a href="https://playground.dev.zebedee.cloud" target="_blank">
+            here
+          </a>
+          .
+        </p>
+        <img
+          src={'/playground.png'}
+          alt="Dev Playground"
+          className={heroStyles.playgroundWrapper}
+        />
+        <div className={heroStyles.download}>
+          <DownloadButton
+            buttonOne={{
+              label: 'Open Dev Playground',
+              url: 'https://playground.dev.zebedee.cloud',
+            }}
+          />
+        </div>
 
         {/**
          * Project goals
          */}
-        <h2 id="hashtag-goals">
-          <a href="#hashtag-goals">@zbd/node</a>
+        <h2 id="goals">
+          <a href="#goals">@zbd/node</a>
         </h2>
         <p>
           The goal of the project is to create a beautiful and extensible
@@ -150,630 +287,87 @@ export default function HomePage() {
           </a>
           .
         </p>
-        <p>Your module has to expose at least one of these methods:</p>
+        <p>
+          These are the methods available to the <code>zbd</code> client
+          instance after it's authenticated:
+        </p>
         <div className="table large">
           <table className="api">
             <thead>
               <tr>
                 <td>Method</td>
-                <td>Invoked from</td>
+                <td>Entity</td>
                 <td>Description</td>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>
-                  <code>onApp</code>
-                </td>
-                <td>Electron</td>
-                <td>
-                  <p>
-                    Invoked when the app first loads. If a plugin reloads, it's
-                    invoked again with the existing app.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>app</code>
-                        </td>
-                        <td>The electron app.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>onWindow</code>
-                </td>
-                <td>Electron</td>
-                <td>
-                  <p>
-                    Invoked when each window is created. If a plugin reloads,
-                    it's invoked again with the existing windows.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>window</code>
-                        </td>
-                        <td>
-                          An electron <code>BrowserWindow</code>.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>onUnload</code>
-                </td>
-                <td>Electron</td>
-                <td>
-                  <p>Invoked when a plugin is removed by the user.</p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>app</code>
-                        </td>
-                        <td>The electron app.</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>decorateConfig</code>
-                </td>
-                <td>Electron / Renderer</td>
-                <td>
-                  <p>
-                    <b>v0.5.0+</b>. Allows you to decorate the user's
-                    configuration.
-                    <br />
-                    Useful for themeing or custom parameters for your plugin.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>config</code>
-                        </td>
-                        <td>
-                          The <code>config</code> object
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>decorateEnv</code>
-                </td>
-                <td>Electron</td>
-                <td>
-                  <p>
-                    <b>v0.7.0+</b>. Allows you to decorate the user's
-                    environment by returning a modified environment object.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>environment</code>
-                        </td>
-                        <td>
-                          The <code>environment</code> object
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>decorateMenu</code>
-                </td>
-                <td>Electron</td>
-                <td>
-                  <p>
-                    Invoked with the Electron's <code>Menu</code> template. If a
-                    plugin reloads, it's called again and the menu is refreshed.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>menu</code>
-                        </td>
-                        <td>The menu template object</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>decorateBrowserOptions</code>
-                </td>
-                <td>Electron</td>
-                <td>
-                  <p>
-                    Allows you to decorate Electron's <code>BrowserWindow</code>{' '}
-                    options when a new window is created.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>options</code>
-                        </td>
-                        <td>
-                          The <code>BrowserWindow</code> options object.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>onRendererWindow</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    Invoked when a plugin is first loaded or subsequently
-                    reloaded in each window.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>window</code>
-                        </td>
-                        <td>The window object</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>middleware</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    A custom Redux middleware that can intercept any action.
-                    Subsequently we invoke the <code>thunk</code>
-                    middleware, which means your middleware can
-                    <code>next</code> thunks.
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>reduceUI</code>
-                  <br />
-                  <code>reduceSessions</code>
-                  <br />
-                  <code>reduceTermGroups</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    A custom reducer for the <code>ui</code>,{' '}
-                    <code>sessions</code> or <code>termgroups</code> state
-                    shape.
-                  </p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>state</code>
-                        </td>
-                        <td>The Redux state object</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>action</code>
-                        </td>
-                        <td>The action object</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>getTabsProps</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    Passes down props from <code>&lt;Tabs&gt;</code>
-                    to the <code>&lt;Header&gt;</code> component. Must return
-                    the composed props object.
-                  </p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>parentProps</code>
-                        </td>
-                        <td>Props form the parent component.</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>props</code>
-                        </td>
-                        <td>
-                          The existing properties that will be passed to the
-                          component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>getTabProps</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    Passes down props from <code>&lt;Tab&gt;</code>
-                    to the <code>&lt;Tabs&gt;</code> component. Must return the
-                    composed props object.
-                  </p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>uid</code>
-                        </td>
-                        <td>Tab / Term uid</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>parentProps</code>
-                        </td>
-                        <td>Props form the parent component.</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>props</code>
-                        </td>
-                        <td>
-                          The existing properties that will be passed to the
-                          component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>getTermGroupProps</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    Passes down props from <code>&lt;Terms&gt;</code>
-                    to the <code>&lt;TermGroup&gt;</code> component. Must return
-                    the composed props object.
-                  </p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>uid</code>
-                        </td>
-                        <td>TermGroup uid</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>parentProps</code>
-                        </td>
-                        <td>Props form the parent component.</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>props</code>
-                        </td>
-                        <td>
-                          The existing properties that will be passed to the
-                          component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>getTermProps</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    Passes down props from <code>&lt;TermGroup&gt;</code>
-                    to the <code>&lt;Term&gt;</code> component. Must return the
-                    composed props object.
-                  </p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>uid</code>
-                        </td>
-                        <td>Term uid</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>parentProps</code>
-                        </td>
-                        <td>Props form the parent component.</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>props</code>
-                        </td>
-                        <td>
-                          The existing properties that will be passed to the
-                          component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>mapHyperState</code>
-                  <br />
-                  <code>mapTermsState</code>
-                  <br />
-                  <code>mapHeaderState</code>
-                  <br />
-                  <code>mapNotificationsState</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    A custom mapper for the state properties that{' '}
-                    <a
-                      href="https://github.com/vercel/hyper/tree/master/lib/containers"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      container components
-                    </a>{' '}
-                    receive. Note that for children components to get these
-                    properties, you have to pass them down using the
-                    corresponding methods (like <code>getTermProps</code>).
-                  </p>
-                  <p>Must return an extended object of the map passed.</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>state</code>
-                        </td>
-                        <td>
-                          The <code>Redux</code> global state
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>map</code>
-                        </td>
-                        <td>
-                          The existing map of properties that will be passed to
-                          the component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>mapHyperDispatch</code>
-                  <br />
-                  <code>mapTermsDispatch</code>
-                  <br />
-                  <code>mapHeaderDispatch</code>
-                  <br />
-                  <code>mapNotificationsDispatch</code>
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    A custom mapper for the dispatch properties. Must return an
-                    extended object of the map passed.
-                  </p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>dispatch</code>
-                        </td>
-                        <td>The Redux dispatch function</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>map</code>
-                        </td>
-                        <td>
-                          The existing map of properties that will be passed to
-                          the component.
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <code>decorateHyper</code>
-                  <br />
-                  <code>decorateNotifications</code>
-                  <br />
-                  <code>decorateNotification</code>
-                  <code>decorateHeader</code>
-                  <br />
-                  <code>decorateTabs</code>
-                  <br />
-                  <code>decorateTab</code>
-                  <code>decorateTerms</code>
-                  <br />
-                  <code>decorateTermGroup</code>
-                  <br />
-                  <code>decorateSplitPane</code>
-                  <br />
-                  <code>decorateTerm</code>
-                  <br />
-                </td>
-                <td>Renderer</td>
-                <td>
-                  <p>
-                    Invoked with the <code>React</code> <code>Component</code>
-                    to decorate. Must return a Higher Order Component.
-                  </p>
-                  <p>Parameters:</p>
-                  <table className="params">
-                    <tbody>
-                      <tr>
-                        <td>
-                          <code>Hyper</code>
-                        </td>
-                        <td>
-                          The <code>React</code> <code>Component</code>
-                          constructor.
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <code>env</code>
-                        </td>
-                        <td>
-                          A collection of useful module references for building
-                          components.{' '}
-                          <a href="#decorating-components">See below</a>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </td>
-              </tr>
+              {methods.map((method) => (
+                <tr key={method.name}>
+                  <td>
+                    <code>{method.name}</code>
+                  </td>
+                  <td>{getEntity(method.entity)}</td>
+                  <td>
+                    <p>{method.description}</p>
+                    {method.params && method.params.length > 0 && (
+                      <>
+                        <p>Parameters:</p>
+                        <table className="params">
+                          <tbody>
+                            {method.params.map((param) => (
+                              <tr>
+                                <td>
+                                  <code>{param.name}</code>
+                                </td>
+                                <td>{param.description}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </>
+                    )}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
-        <h3 id="hyperyellow">
-          <a href="#hyperyellow">Example theme: Hyperyellow</a>
-        </h3>
+        <h2 id="community">
+          <a href="#community">Community Support</a>
+        </h2>
         <p>
-          The following extension simply alters the config to add CSS and yellow
-          colors! Here's the{' '}
+          Feature Request? Bugfix? Recommendations? We're all ears! Head on over
+          to the{' '}
           <a
+            href="https://github.com/zebedeeio/zbd-node/issues"
             target="_blank"
-            rel="noopener"
-            href="https://github.com/vercel/hyperyellow/blob/29c4ac9748be74d7ad587b7077758ef26f6ce5c2/index.js#L1"
           >
-            code
-          </a>
-          .
+            @zbd/node Issues
+          </a>{' '}
+          page and submit one. We also welcome Pull Requests and other
+          contributions to the library.
         </p>
-        <p style={{ textAlign: 'center' }}>
-          <video
-            src="/hyperyellow.mp4"
-            autoPlay
-            muted
-            playsInline
-            loop
-            width={446}
-            height={332}
-            alt="hyperyellow_example"
+        <br />
+        <div className={heroStyles.download}>
+          <DownloadButton
+            buttonOne={{
+              label: 'SDK Source Code',
+              url: 'https://github.com/zebedeeio/zbd-node/',
+            }}
           />
-        </p>
-        <p>
-          Themes are simply plugins! Only one hook, <code>decorateConfig</code>
-          is needed:
-        </p>
-        <pre>
-          <code>
-            exports.decorateConfig = (config) =&gt; {'{'}
-            {'\n'}
-            {'  '}return Object.assign({'{'}
-            {'}'}, config, {'{'}
-            {'\n'}
-            {'    '}borderColor: 'yellow',{'\n'}
-            {'    '}cursorColor: 'yellow',{'\n'}
-            {'    '}css: `{'\n'}
-            {'      '}${'{'}config.css || ''{'}'}
-            {'\n'}
-            {'      '}.tabs_nav .tabs_list .tab_text {'{'}
-            {'\n'}
-            {'        '}color: yellow;{'\n'}
-            {'      '}
-            {'}'}
-            {'\n'}
-            {'      '}.tabs_nav .tabs_title {'{'}
-            {'\n'}
-            {'        '}color: yellow;{'\n'}
-            {'      '}
-            {'}'}
-            {'\n'}
-            {'    '}`{'\n'}
-            {'  '}
-            {'}'});{'\n'}
-            {'}'}
-          </code>
-        </pre>
-        <p>
-          I grabbed the class names by inspecting the term with Devtools, which
-          you can trigger from <code>View -&gt; Toggle Developer Tools</code>.
-          When you do so, notice that some classes are automatically generated
-          and followed by a random nonce (e.g.: <code>term_13hv8io</code>).
-          Ignore those: they change with every new window!
-        </p>
-        <p>
-          Notice the emphasis on playing nice with other extensions.
-          Specifically, we create a new object, extend only the keys we are
-          interested in, and we <b>compose</b> the CSS to preserve the user's
-          setting and that of other authors':
-        </p>
-        <pre>
-          <code>
-            return Object.assign({'{'}
-            {'}'}, config, {'{'}
-            {'\n'}
-            {'  '}css: `{'\n'}
-            {'    '}${'{'}config.css || ''{'}'}
-            {'\n'}
-            {'    '}/* your css here */{'\n'}
-            {'  '}`{'\n'}
-            {'}'});
-          </code>
-        </pre>
+          <a
+            className={heroStyles.other}
+            href="https://github.com/zebedeeio"
+            target="_blank"
+          >
+            View other ZEBEDEE GitHub repositories
+          </a>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </div>
 
       <Footer />
