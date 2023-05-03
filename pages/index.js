@@ -68,6 +68,9 @@ export default function HomePage() {
           alt="ZEBEDEE Logo"
           className={heroStyles.logoWrapper}
         />
+        <div className={heroStyles.mainTitle}>
+          <h1>Node.js SDK for ZEBEDEE API</h1>
+        </div>
         <div className={heroStyles.terminal}>
           <img
             src="/zbd-node-snippet.png"
@@ -295,6 +298,11 @@ export default function HomePage() {
                               <tr>
                                 <td>
                                   <code>{param.name}</code>
+                                  {param.extra && (
+                                    <p className={heroStyles.extraParam}>
+                                      {param.extra}
+                                    </p>
+                                  )}
                                 </td>
                                 <td>{param.description}</td>
                               </tr>

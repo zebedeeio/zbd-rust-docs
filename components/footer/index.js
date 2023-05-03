@@ -27,7 +27,7 @@ export default () => (
         href="https://zebedee.io"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.vercel}
+        className={styles.zbd}
       >
         <img src="/zebedee-logo.png" className={styles.zebedeeLogo} />
       </a>

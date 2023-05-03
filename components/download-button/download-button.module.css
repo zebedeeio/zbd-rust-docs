@@ -25,14 +25,27 @@
 
 .doubleWrap {
   display: flex;
+  flex-direction: row;
 }
 
 .doubleWrap a:nth-child(2) {
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
-@media screen and (max-width: 900px) {
+.doubleWrap a:nth-child(1) {
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .doubleWrap {
+    flex-direction: column;
+  }
+  .doubleWrap a:nth-child(2) {
+    margin-left: 0;
+  }
+
   .doubleWrap a:nth-child(1) {
-    display: none;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }

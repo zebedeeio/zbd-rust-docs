@@ -71,9 +71,17 @@ export default () => {
       <nav
         className={`${styles.mobileNav} ${mobileNavShown ? styles.active : ''}`}
       >
-        <Link href="/plugins">Setup</Link>
-        <Link href="/themes">GitHub: @zbd/node</Link>
-        <Link href="/blog">Blog</Link>
+        <Link href="/#setup">Installation</Link>
+        <Link href="/#api">API</Link>
+        <Link href="https://github.com/zebedeeio/zbd-node" target="_blank">
+          GitHub: @zbd/node
+        </Link>
+        <Link href="https://playground.dev.zebedee.cloud" target="_blank">
+          Dev Playground
+        </Link>
+        <Link href="https://dashboard.zebedee.io" target="_blank">
+          ZEBEDEE Developer Dashboard
+        </Link>
       </nav>
     </>
   )

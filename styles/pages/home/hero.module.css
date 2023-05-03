@@ -39,10 +39,23 @@
   .terminal {
     margin: 2rem auto;
   }
+
+  .imgWrapper {
+    height: auto !important;
+    width: 90% !important;
+    border-radius: 6px;
+    margin: 0 auto 0 5%;
+  }
+
+  .mainTitle {
+    padding-top: 30px;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
 .imgWrapper {
-  height: 300px;
+  height: auto;
   width: 500px;
   border-radius: 6px;
 }
@@ -55,5 +68,18 @@
 
 .playgroundWrapper {
   width: 100%;
+  margin: 0 auto;
+}
+
+.extraParam {
+  color: #d03737;
+  display: inline-block;
+  padding-left: 8px;
+}
+
+.mainTitle {
+  padding-top: 30px;
+  padding: 30px 30px 0 30px;
+  text-align: center;
   margin: 0 auto;
 }

@@ -7,15 +7,17 @@ export const methods = [
     params: [
       {
         name: 'amount',
+        extra: 'required',
         description: 'The amount for the Charge -> in millisatoshis.',
+      },
+      {
+        name: 'description',
+        extra: 'required',
+        description: 'Note or comment for this Charge (visible to payer).',
       },
       {
         name: 'expiresIn',
         description: 'Time until Charge expiration -> in seconds.',
-      },
-      {
-        name: 'description',
-        description: 'Note or comment for this Charge (visible to payer).',
       },
       {
         name: 'internalId',
@@ -41,6 +43,7 @@ export const methods = [
     params: [
       {
         name: 'chargeId',
+        extra: 'required',
         description: 'The ID of the Charge.',
       },
     ],
@@ -59,6 +62,7 @@ export const methods = [
     params: [
       {
         name: 'invoice',
+        extra: 'required',
         description:
           'The code for the Charge / Payment Request / Lightning Network invoice (e.g. lnbc10m.....61hj).',
       },
@@ -78,16 +82,19 @@ export const methods = [
     params: [
       {
         name: 'minAmount',
+        extra: 'required',
         description:
           'Minimum allowed amount for the Static Charge -> in millisatoshis.',
       },
       {
         name: 'maxAmount',
+        extra: 'required',
         description:
           'Maximum allowed amount for the Static Charge -> in millisatoshis.',
       },
       {
         name: 'description',
+        extra: 'required',
         description:
           'Note or comment for this Static Charge (visible to payer).',
       },
@@ -123,6 +130,7 @@ export const methods = [
     params: [
       {
         name: 'staticChargeId',
+        extra: 'required',
         description: 'The ID of the Static Charge.',
       },
     ],
@@ -186,6 +194,7 @@ export const methods = [
     params: [
       {
         name: 'amount',
+        extra: 'required',
         description:
           'The amount for the Withdrawal Request -> in millisatoshis.',
       },
@@ -222,6 +231,7 @@ export const methods = [
     params: [
       {
         name: 'withdrawalRequestId',
+        extra: 'required',
         description: 'The ID of the Withdrawal Request.',
       },
     ],
@@ -240,10 +250,12 @@ export const methods = [
     params: [
       {
         name: 'amount',
+        extra: 'required',
         description: 'The amount for the Payment -> in millisatoshis.',
       },
       {
         name: 'lnAddress',
+        extra: 'required',
         description: 'The Lightning Address of the intended recipient.',
       },
       {
@@ -274,6 +286,7 @@ export const methods = [
     params: [
       {
         name: 'Lightning Address',
+        extra: 'required',
         description: 'The address attempted to be verified.',
       },
     ],
@@ -292,10 +305,12 @@ export const methods = [
     params: [
       {
         name: 'lnAddress',
+        extra: 'required',
         description: 'The Lightning Address of the intended recipient.',
       },
       {
         name: 'amount',
+        extra: 'required',
         description: 'The amount for the Charge -> in millisatoshis.',
       },
       {
@@ -330,10 +345,12 @@ export const methods = [
     params: [
       {
         name: 'amount',
+        extra: 'required',
         description: 'The amount to be transferred -> in millisatoshis.',
       },
       {
         name: 'receiverWalletId',
+        extra: 'required',
         description: 'The Wallet ID of the recipient Project.',
       },
     ],
@@ -352,10 +369,12 @@ export const methods = [
     params: [
       {
         name: 'amount',
+        extra: 'required',
         description: 'The amount for the Payment -> in millisatoshis.',
       },
       {
         name: 'pubkey',
+        extra: 'required',
         description: 'The Public Key for the destination Lightning node.',
       },
       {
@@ -386,6 +405,7 @@ export const methods = [
     params: [
       {
         name: 'invoice',
+        extra: 'required',
         description: 'Lightning Network Payment Request / Charge.',
       },
       {
@@ -420,6 +440,7 @@ export const methods = [
     params: [
       {
         name: 'paymentId',
+        extra: 'required',
         description: 'The ID of the Payment.',
       },
     ],
@@ -438,15 +459,17 @@ export const methods = [
     params: [
       {
         name: 'amount',
+        extra: 'required',
         description: 'The amount for the Payment -> in millisatoshis.',
+      },
+      {
+        name: 'gamertag',
+        extra: 'required',
+        description: 'Destination ZBD Gamertag.',
       },
       {
         name: 'description',
         description: 'Note or comment for this Payment (visible to recipient).',
-      },
-      {
-        name: 'gamertag',
-        description: 'Destination ZBD Gamertag.',
       },
     ],
     examples: [
@@ -463,6 +486,7 @@ export const methods = [
     params: [
       {
         name: 'transactionId',
+        extra: 'required',
         description: 'The ZBD Gamertag Payment Transaction ID.',
       },
     ],
@@ -480,6 +504,7 @@ export const methods = [
     params: [
       {
         name: 'gamertag',
+        extra: 'required',
         description: 'The ZBD Gamertag of the ZBD user.',
       },
     ],
@@ -498,6 +523,7 @@ export const methods = [
     params: [
       {
         name: 'userId',
+        extra: 'required',
         description: 'The specified ZBD User ID.',
       },
     ],
@@ -516,6 +542,7 @@ export const methods = [
     params: [
       {
         name: 'IP Address',
+        extra: 'required',
         description: 'The IP Address being checked.',
       },
     ],
