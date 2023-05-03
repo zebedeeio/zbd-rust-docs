@@ -204,7 +204,7 @@ export default function HomePage() {
         </pre>
         <p>
           Once you've connected your ZEBEDEE API Key as a local environment
-          variable and sstarted the Next.js server, you can open your local Dev
+          variable and started the Next.js server, you can open your local Dev
           Playground at{' '}
           <code>
             <a href="http://localhost:3000/playground" target="_blank">
@@ -263,33 +263,10 @@ export default function HomePage() {
           <a href="#api">API Reference</a>
         </h2>
         <p>
-          Extensions are universal Node.js modules loaded by both Electron and
-          the renderer process.
-        </p>
-        <p>
-          The extension system is designed around <b>composition</b> of the APIs
-          we use to build the terminal: <code>React</code> components and{' '}
-          <code>Redux</code> actions.
-        </p>
-        <p>
-          Instead of exposing a custom API method or parameter for every
-          possible customization point, we allow you to intercept and compose
-          every bit of functionality!
-        </p>
-        <p>
-          The only knowledge that is therefore required to successfully extend{' '}
-          <code>Hyper</code> is that of its underlying open source libraries.
-        </p>
-        <p>
-          You can find additional details about plugin development{' '}
-          <a href="https://github.com/vercel/hyper/blob/master/PLUGINS.md">
-            in the Hyper repository
-          </a>
-          .
-        </p>
-        <p>
-          These are the methods available to the <code>zbd</code> client
-          instance after it's authenticated:
+          Below is a comprehensive list of the methods and functions available
+          in the <code>@zbd/node</code> SDK. These methods are ONLY available to
+          the <code>zbd</code> client instance after it's been properly
+          authenticated with a Project's API Key.
         </p>
         <div className="table large">
           <table className="api">
@@ -320,6 +297,26 @@ export default function HomePage() {
                                   <code>{param.name}</code>
                                 </td>
                                 <td>{param.description}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </>
+                    )}
+                    {method.examples && method.examples.length > 0 && (
+                      <>
+                        <br />
+                        <br />
+                        <p>Resources:</p>
+                        <table className="params">
+                          <tbody>
+                            {method.examples.map((example) => (
+                              <tr>
+                                <td>
+                                  <a href={example.url} target="_blank">
+                                    {example.name}
+                                  </a>
+                                </td>
                               </tr>
                             ))}
                           </tbody>

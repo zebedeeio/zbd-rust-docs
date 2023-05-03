@@ -26,16 +26,28 @@ export const methods = [
         description: 'The endpoint ZEBEDEE will POST Charge updates to.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/charges/create',
+      },
+    ],
   },
   {
     name: 'getCharge',
     entity: 'Charge',
     description:
-      'Retrieves all information relating a specific Charge / Payment Request.',
+      'Retrieves all information relating to a specific Charge / Payment Request.',
     params: [
       {
         name: 'chargeId',
         description: 'The ID of the Charge.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/charges/get',
       },
     ],
   },
@@ -49,6 +61,12 @@ export const methods = [
         name: 'invoice',
         description:
           'The code for the Charge / Payment Request / Lightning Network invoice (e.g. lnbc10m.....61hj).',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/charges/decode',
       },
     ],
   },
@@ -90,6 +108,12 @@ export const methods = [
         description: 'The endpoint ZEBEDEE will POST updates to.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/static-charges/create',
+      },
+    ],
   },
   {
     name: 'getStaticCharge',
@@ -100,6 +124,12 @@ export const methods = [
       {
         name: 'staticChargeId',
         description: 'The ID of the Static Charge.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/static-charges/get',
       },
     ],
   },
@@ -141,6 +171,12 @@ export const methods = [
         description: 'The endpoint ZEBEDEE will POST updates to.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/static-charges/update',
+      },
+    ],
   },
   {
     name: 'createWithdrawalRequest',
@@ -172,6 +208,12 @@ export const methods = [
           'The endpoint ZEBEDEE will POST Withdrawal Request updates to.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/withdrawal-requests/create',
+      },
+    ],
   },
   {
     name: 'getWithdrawalRequest',
@@ -181,6 +223,12 @@ export const methods = [
       {
         name: 'withdrawalRequestId',
         description: 'The ID of the Withdrawal Request.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/withdrawal-requests/get',
       },
     ],
   },
@@ -211,6 +259,12 @@ export const methods = [
         description: 'The endpoint ZEBEDEE will POST updates to.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/lightning-address/send-payment',
+      },
+    ],
   },
   {
     name: 'validateLightningAddress',
@@ -221,6 +275,12 @@ export const methods = [
       {
         name: 'Lightning Address',
         description: 'The address attempted to be verified.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/lightning-address/validate',
       },
     ],
   },
@@ -243,12 +303,24 @@ export const methods = [
         description: 'Note or comment of this Charge.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/lightning-address/create-charge',
+      },
+    ],
   },
   {
     name: 'getWallet',
     entity: 'Wallet',
     description: 'Retrieves the total balance of a given Project Wallet.',
     params: [],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/wallet/get',
+      },
+    ],
   },
   {
     name: 'internalTransfer',
@@ -263,6 +335,12 @@ export const methods = [
       {
         name: 'receiverWalletId',
         description: 'The Wallet ID of the recipient Project.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/internal-transfer/initiate',
       },
     ],
   },
@@ -291,6 +369,12 @@ export const methods = [
       {
         name: 'tlvRecords',
         description: 'TLV data records.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/keysend/send-payment',
       },
     ],
   },
@@ -322,6 +406,12 @@ export const methods = [
         description: 'The endpoint ZEBEDEE will POST updates to.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/payments/send',
+      },
+    ],
   },
   {
     name: 'getPayment',
@@ -331,6 +421,12 @@ export const methods = [
       {
         name: 'paymentId',
         description: 'The ID of the Payment.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/payments/get',
       },
     ],
   },
@@ -353,6 +449,12 @@ export const methods = [
         description: 'Destination ZBD Gamertag.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/gamertag/send-payment',
+      },
+    ],
   },
   {
     name: 'getGamertagTransaction',
@@ -364,6 +466,12 @@ export const methods = [
         description: 'The ZBD Gamertag Payment Transaction ID.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/gamertag/get-payment',
+      },
+    ],
   },
   {
     name: 'getUserIdByGamertag',
@@ -373,6 +481,12 @@ export const methods = [
       {
         name: 'gamertag',
         description: 'The ZBD Gamertag of the ZBD user.',
+      },
+    ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/gamertag/get-userid',
       },
     ],
   },
@@ -387,6 +501,12 @@ export const methods = [
         description: 'The specified ZBD User ID.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/gamertag/get-gamertag',
+      },
+    ],
   },
   {
     name: 'isSupportedRegion',
@@ -399,6 +519,12 @@ export const methods = [
         description: 'The IP Address being checked.',
       },
     ],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/utils/is-supported',
+      },
+    ],
   },
   {
     name: 'getZBDProdIps',
@@ -406,6 +532,12 @@ export const methods = [
     description:
       "The ZEBEDEE API relies on callback URLs for keeping you informed about updates that occur to any Charges, Payments, or Withdrawals you've created. In order to ensure that any incoming callback message is indeed from a trusted ZEBEDEE API infrastructure server, we provide this API endpoint for you to know which IP addresses real requests come from.",
     params: [],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/utils/prod-ips',
+      },
+    ],
   },
   {
     name: 'getBtcUsdExchangeRate',
@@ -413,5 +545,11 @@ export const methods = [
     description:
       "Get the latest price for Bitcoin in US Dollars. The exchange rate feed is refreshed every 5 seconds and is based upon a combination of industry-leading partner exchange providers's price feeds.",
     params: [],
+    examples: [
+      {
+        name: 'View response payload examples',
+        url: 'https://docs.zebedee.io/api/utils/btc-usd',
+      },
+    ],
   },
 ]
