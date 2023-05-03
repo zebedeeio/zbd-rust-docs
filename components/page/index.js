@@ -7,7 +7,7 @@ export default ({
   children,
   title = '@zbd/node - Node.js SDK for the ZEBEDEE API',
   description = 'The one library you need to use ZEBEDEE API in your Node.js project. The SDK provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
-  image = 'https://i.imgur.com/WUQW255.png',
+  image = 'https://i.imgur.com/NxlH1SR.png',
 }) => {
   const { search } = useSearch()
 
@@ -36,8 +36,8 @@ export default ({
         <meta property="og:image" content={image} />
 
         {/* URL */}
-        <meta property="og:url" content="https://hyper.is" />
-        <meta name="twitter:site" content="@vercel" />
+        <meta property="og:url" content="https://zbd-node.dev.zebedee.cloud" />
+        <meta name="twitter:site" content="@zebedeeio" />
 
         {/* General */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -46,46 +46,9 @@ export default ({
 
         {/* Favicon */}
         <link
-          rel="apple-touch-icon-precomposed"
-          sizes="57x57"
-          href="/apple-touch-icon-57x57.png"
-        />
-        <link
-          rel="apple-touch-icon-precomposed"
-          sizes="114x114"
-          href="/apple-touch-icon-114x114.png"
-        />
-        <link
-          rel="apple-touch-icon-precomposed"
-          sizes="72x72"
-          href="/apple-touch-icon-72x72.png"
-        />
-        <link
-          rel="apple-touch-icon-precomposed"
-          sizes="144x144"
-          href="/apple-touch-icon-144x144.png"
-        />
-        <link
-          rel="apple-touch-icon-precomposed"
-          sizes="120x120"
-          href="/apple-touch-icon-120x120.png"
-        />
-        <link
-          rel="apple-touch-icon-precomposed"
-          sizes="152x152"
-          href="/apple-touch-icon-152x152.png"
-        />
-        <link
           rel="icon"
           type="image/png"
-          href="/favicon-32x32.png"
-          sizes="32x32"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon-16x16.png"
-          sizes="16x16"
+          href="https://cdn.zebedee.io/an/zbd/zbd-node-logo.png"
         />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
