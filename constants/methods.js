@@ -33,6 +33,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/charges/create',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#createcharge',
+      },
     ],
   },
   {
@@ -51,6 +55,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/charges/get',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getcharge',
       },
     ],
   },
@@ -71,6 +79,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/charges/decode',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#decodecharge',
       },
     ],
   },
@@ -120,6 +132,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/static-charges/create',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#createstaticcharge',
+      },
     ],
   },
   {
@@ -138,6 +154,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/static-charges/get',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getstaticcharge',
       },
     ],
   },
@@ -184,6 +204,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/static-charges/update',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#updatestaticcharge',
+      },
     ],
   },
   {
@@ -222,6 +246,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/withdrawal-requests/create',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#createwithdrawalrequest',
+      },
     ],
   },
   {
@@ -239,6 +267,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/withdrawal-requests/get',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getwithdrawalrequest',
       },
     ],
   },
@@ -275,6 +307,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/lightning-address/send-payment',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#sendlightningaddresspayment',
       },
     ],
   },
@@ -323,6 +359,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/lightning-address/create-charge',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#createchargefromlightningaddress',
+      },
     ],
   },
   {
@@ -334,6 +374,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/wallet/get',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getwallet',
       },
     ],
   },
@@ -358,6 +402,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/internal-transfer/initiate',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#internaltransfer',
       },
     ],
   },
@@ -395,6 +443,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/keysend/send-payment',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#sendkeysendpayment',
+      },
     ],
   },
   {
@@ -431,6 +483,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/payments/send',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#sendpayment',
+      },
     ],
   },
   {
@@ -448,6 +504,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/payments/get',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getpayment',
       },
     ],
   },
@@ -477,6 +537,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/gamertag/send-payment',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#sendgamertagpayment',
+      },
     ],
   },
   {
@@ -495,6 +559,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/gamertag/get-payment',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getgamertagtransaction',
+      },
     ],
   },
   {
@@ -512,6 +580,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/gamertag/get-userid',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getuseridbygamertag',
       },
     ],
   },
@@ -532,6 +604,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/gamertag/get-gamertag',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getgamertagbyuserid',
+      },
     ],
   },
   {
@@ -551,6 +627,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/utils/is-supported',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#issupportedregion',
+      },
     ],
   },
   {
@@ -564,6 +644,10 @@ export const methods = [
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/utils/prod-ips',
       },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getzbdprodips',
+      },
     ],
   },
   {
@@ -576,6 +660,10 @@ export const methods = [
       {
         name: 'View response payload examples',
         url: 'https://docs.zebedee.io/api/utils/btc-usd',
+      },
+      {
+        name: 'View source code example examples',
+        url: 'https://github.com/zebedeeio/zbd-node#getbtcusdexchangerate',
       },
     ],
   },
