@@ -47,6 +47,11 @@
     margin: 0 auto 0 5%;
   }
 
+  .codeSnippet {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
   .mainTitle {
     padding-top: 30px;
     text-align: center;

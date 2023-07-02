@@ -1,3 +1,4 @@
+import { CopyBlock, dracula } from 'react-code-blocks'
 import Page from 'components/page'
 import Footer from 'components/footer'
 import DownloadButton from 'components/download-button'
@@ -56,6 +57,24 @@ const getEntity = (word) => {
   )
 }
 
+const codeSnippet = `
+  // Import @zbd/node library
+  import { zbd } from '@zbd/node';
+
+  // Create ZBD instance
+  const ZBD = new zbd(API_KEY);
+
+  // Send Bitcoin payment
+  const response = await ZBD.sendLightningAddressPayment({
+    amount: 50000,
+    lnAddress: 'andre@zbd.gg',
+    comment: 'Lightning fast!',
+  });
+
+  // Done!
+  
+`
+
 export default function HomePage() {
   return (
     <Page>
@@ -72,11 +91,15 @@ export default function HomePage() {
           <h1>Node.js SDK for ZEBEDEE API</h1>
         </div>
         <div className={heroStyles.terminal}>
-          <img
-            src="/zbd-node-snippet.png"
-            alt="@zbd/node snippet"
-            className={heroStyles.imgWrapper}
-          />
+          <div className={heroStyles.codeSnippet}>
+            <CopyBlock
+              text={codeSnippet}
+              language={'javascript'}
+              showLineNumbers={false}
+              wrapLines
+              theme={dracula}
+            />
+          </div>
         </div>
         <div className={heroStyles.download}>
           <DownloadButton
