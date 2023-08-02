@@ -88,7 +88,7 @@ export default function HomePage() {
           className={heroStyles.logoWrapper}
         />
         <div className={heroStyles.mainTitle}>
-          <h1>Node.js SDK for ZBD API</h1>
+          <h1>Rust Crate for ZBD API</h1>
         </div>
         <div className={heroStyles.terminal}>
           <div className={heroStyles.codeSnippet}>

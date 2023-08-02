@@ -1,9 +1,9 @@
 {
-  "name": "zbd-node-docs",
+  "name": "zbd-rust-docs",
   "private": true,
   "version": "1.0.0",
-  "description": "The official documentation website for the ZBD Node.js SDK",
-  "repository": "zebedeeio/zbd-node-docs",
+  "description": "The official documentation website for the ZBD Rust Library",
+  "repository": "zebedeeio/zbd-rust-docs",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
