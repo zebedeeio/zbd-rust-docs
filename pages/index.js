@@ -106,7 +106,7 @@ export default function HomePage() {
             buttonOne={{ label: 'View SDK Docs', url: '/#api' }}
             buttonTwo={{
               label: 'Open Playground',
-              url: 'https://playground.dev.zebedee.cloud',
+              url: 'https://nextjs.zbd.dev',
             }}
           />
           <a className={heroStyles.other} href="#sdks">

@@ -5,8 +5,8 @@ import { useSearch } from 'lib/search-context'
 
 export default ({
   children,
-  title = '@zbd/node - ZEBEDEE Node.js SDK',
-  description = 'The one library you need to use ZEBEDEE API in your Node.js project. The SDK provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
+  title = '@zbd/node - ZBD Node.js SDK',
+  description = 'The one library you need to use ZBD API in your Node.js project. The SDK provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
   image = 'https://i.imgur.com/NxlH1SR.png',
 }) => {
   const { search } = useSearch()
@@ -36,7 +36,7 @@ export default ({
         <meta property="og:image" content={image} />
 
         {/* URL */}
-        <meta property="og:url" content="https://zbd-node.dev.zebedee.cloud" />
+        <meta property="og:url" content="https://node.zbd.dev" />
         <meta name="twitter:site" content="@zebedeeio" />
 
         {/* General */}

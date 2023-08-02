@@ -2,7 +2,7 @@
   "name": "zbd-node-docs",
   "private": true,
   "version": "1.0.0",
-  "description": "The official documentation website for the ZEBEDEE Node.js SDK",
+  "description": "The official documentation website for the ZBD Node.js SDK",
   "repository": "zebedeeio/zbd-node-docs",
   "license": "MIT",
   "scripts": {

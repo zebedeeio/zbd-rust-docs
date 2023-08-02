@@ -25,7 +25,7 @@ export const methods = [
       },
       {
         name: 'callbackUrl',
-        description: 'The endpoint ZEBEDEE will POST Charge updates to.',
+        description: 'The endpoint ZBD will POST Charge updates to.',
       },
     ],
     examples: [
@@ -124,7 +124,7 @@ export const methods = [
       },
       {
         name: 'callbackUrl',
-        description: 'The endpoint ZEBEDEE will POST updates to.',
+        description: 'The endpoint ZBD will POST updates to.',
       },
     ],
     examples: [
@@ -196,7 +196,7 @@ export const methods = [
       },
       {
         name: 'callbackUrl',
-        description: 'The endpoint ZEBEDEE will POST updates to.',
+        description: 'The endpoint ZBD will POST updates to.',
       },
     ],
     examples: [
@@ -238,7 +238,7 @@ export const methods = [
       {
         name: 'callbackUrl',
         description:
-          'The endpoint ZEBEDEE will POST Withdrawal Request updates to.',
+          'The endpoint ZBD will POST Withdrawal Request updates to.',
       },
     ],
     examples: [
@@ -300,7 +300,7 @@ export const methods = [
       },
       {
         name: 'callbackUrl',
-        description: 'The endpoint ZEBEDEE will POST updates to.',
+        description: 'The endpoint ZBD will POST updates to.',
       },
     ],
     examples: [
@@ -427,7 +427,7 @@ export const methods = [
       },
       {
         name: 'callbackUrl',
-        description: 'The endpoint ZEBEDEE will POST updates to.',
+        description: 'The endpoint ZBD will POST updates to.',
       },
       {
         name: 'internalId',
@@ -475,7 +475,7 @@ export const methods = [
       },
       {
         name: 'callbackUrl',
-        description: 'The endpoint ZEBEDEE will POST updates to.',
+        description: 'The endpoint ZBD will POST updates to.',
       },
     ],
     examples: [
@@ -614,7 +614,7 @@ export const methods = [
     name: 'isSupportedRegion',
     entity: 'Utility',
     description:
-      'If you wish to know whether the incoming user request is coming from a region/country where ZEBEDEE is supported or not, you can use this simple API endpoint and pass the target IP address as a parameter.',
+      'If you wish to know whether the incoming user request is coming from a region/country where ZBD is supported or not, you can use this simple API endpoint and pass the target IP address as a parameter.',
     params: [
       {
         name: 'IP Address',
@@ -637,7 +637,7 @@ export const methods = [
     name: 'getZBDProdIps',
     entity: 'Utility',
     description:
-      "The ZEBEDEE API relies on callback URLs for keeping you informed about updates that occur to any Charges, Payments, or Withdrawals you've created. In order to ensure that any incoming callback message is indeed from a trusted ZEBEDEE API infrastructure server, we provide this API endpoint for you to know which IP addresses real requests come from.",
+      "The ZBD API relies on callback URLs for keeping you informed about updates that occur to any Charges, Payments, or Withdrawals you've created. In order to ensure that any incoming callback message is indeed from a trusted ZBD API infrastructure server, we provide this API endpoint for you to know which IP addresses real requests come from.",
     params: [],
     examples: [
       {

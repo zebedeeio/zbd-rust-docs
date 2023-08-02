@@ -76,7 +76,7 @@ export default () => {
         <Link href="https://github.com/zebedeeio/zbd-node" target="_blank">
           GitHub: @zbd/node
         </Link>
-        <Link href="https://playground.dev.zebedee.cloud" target="_blank">
+        <Link href="https://nextjs.zbd.dev" target="_blank">
           Dev Playground
         </Link>
         <Link href="https://dashboard.zebedee.io" target="_blank">

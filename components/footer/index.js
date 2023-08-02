@@ -29,7 +29,7 @@ export default () => (
         rel="noopener noreferrer"
         className={styles.zbd}
       >
-        <img src="/zebedee-logo.png" className={styles.zebedeeLogo} />
+        <img src="/zbd-logo.svg" className={styles.zebedeeLogo} />
       </a>
     </nav>
   </footer>
