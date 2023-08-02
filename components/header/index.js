@@ -34,7 +34,7 @@ export default () => {
             rel="noopener noreferrer"
             className={styles.vercel}
           >
-            <img src="/zebedee-logo.png" className={styles.zebedeeLogo} />
+            <img src="/zbd-logo.svg" className={styles.zebedeeLogo} />
           </a>
         </div>
 

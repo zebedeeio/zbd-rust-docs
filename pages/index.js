@@ -84,11 +84,11 @@ export default function HomePage() {
       <div className={heroStyles.root}>
         <img
           src={'/zbd-node-logo.png'}
-          alt="ZEBEDEE Logo"
+          alt="ZBD Logo"
           className={heroStyles.logoWrapper}
         />
         <div className={heroStyles.mainTitle}>
-          <h1>Node.js SDK for ZEBEDEE API</h1>
+          <h1>Node.js SDK for ZBD API</h1>
         </div>
         <div className={heroStyles.terminal}>
           <div className={heroStyles.codeSnippet}>
@@ -126,12 +126,12 @@ export default function HomePage() {
           <a href="#setup">Getting Started</a>
         </h2>
         <p>
-          The Node.js library for ZEBEDEE API is available under{' '}
+          The Node.js library for ZBD API is available under{' '}
           <a href="https://github.com/zebedeeio/zbd-node">
             <code>@zbd/node</code>
           </a>
-          . When building tools with ZEBEDEE support we encourage you to include{' '}
-          <code>zebedee</code> in the <code>keywords</code> field in{' '}
+          . When building tools with ZBD support we encourage you to include{' '}
+          <code>zbd</code> in the <code>keywords</code> field in{' '}
           <code>package.json</code>.
         </p>
         <p>
@@ -149,8 +149,8 @@ export default function HomePage() {
           <code>yarn add @zbd/node</code>
         </pre>
         <p>
-          Now let's authenticate a specific Wallet with that ZEBEDEE Project's
-          API Key.
+          Now let's authenticate a specific Wallet with that ZBD Project's API
+          Key.
         </p>
 
         {/**
@@ -160,21 +160,21 @@ export default function HomePage() {
           <a href="#auth">Authentication</a>
         </h2>
         <p>
-          In order to authenticate your Project Wallet with the ZEBEDEE API, you
-          will need to provide your ZEBEDEE Project's API Key to the{' '}
+          In order to authenticate your Project Wallet with the ZBD API, you
+          will need to provide your ZBD Project's API Key to the{' '}
           <code>@zbd/node</code> SDK.{' '}
           <a
             href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
             target="_blank"
           >
-            You can find your Project API Key in the ZEBEDEE Developer Dashboard
+            You can find your Project API Key in the ZBD Developer Dashboard
           </a>
           .
         </p>
         <p>
           First you must import the <code>zbd</code> SDK client into your
           codebase, and then instantiate it with your Project API Key (replace
-          YOUR_API_KEY_HERE below with your actual ZEBEDEE Project's API Key).
+          YOUR_API_KEY_HERE below with your actual ZBD Project's API Key).
         </p>
         <pre>
           <code>
@@ -202,7 +202,7 @@ export default function HomePage() {
         </h2>
         <p>
           The best way to get started using the <code>@zbd/node</code> SDK for
-          the ZEBEDEE API is to check out our Dev Playground -- a web-based tool
+          the ZBD API is to check out our Dev Playground -- a web-based tool
           that allows you to test and interact with the <code>@zbd/node</code>{' '}
           library without writing any code.
         </p>
@@ -229,9 +229,9 @@ export default function HomePage() {
           </code>
         </pre>
         <p>
-          Once you've connected your ZEBEDEE API Key as a local environment
-          variable and started the Next.js server, you can open your local Dev
-          Playground at{' '}
+          Once you've connected your ZBD API Key as a local environment variable
+          and started the Next.js server, you can open your local Dev Playground
+          at{' '}
           <code>
             <a href="http://localhost:3000/playground" target="_blank">
               localhost:3000/playground
@@ -241,7 +241,7 @@ export default function HomePage() {
         </p>
         <p>
           You may also check out a LIVE running version of the Dev Playground{' '}
-          <a href="https://playground.dev.zebedee.cloud" target="_blank">
+          <a href="https://nextjs.zbd.dev" target="_blank">
             here
           </a>
           .
@@ -255,7 +255,7 @@ export default function HomePage() {
           <DownloadButton
             buttonOne={{
               label: 'Open Dev Playground',
-              url: 'https://playground.dev.zebedee.cloud',
+              url: 'https://nextjs.zbd.dev',
             }}
           />
         </div>
@@ -268,10 +268,10 @@ export default function HomePage() {
         </h2>
         <p>
           The goal of the project is to create a beautiful and extensible
-          experience for developers using ZEBEDEE APIs in a Node.js environment.
-          Our focus will be primarily around providing parity with{' '}
+          experience for developers using ZBD APIs in a Node.js environment. Our
+          focus will be primarily around providing parity with{' '}
           <a href="https://docs.zebedee.io/api/intro" target="_blank">
-            ZEBEDEE REST API
+            ZBD REST API
           </a>
           , as well as providing further stability for developers.
         </p>
@@ -388,7 +388,7 @@ export default function HomePage() {
             href="https://github.com/zebedeeio"
             target="_blank"
           >
-            View other ZEBEDEE GitHub repositories
+            View other ZBD GitHub repositories
           </a>
         </div>
         <br />
