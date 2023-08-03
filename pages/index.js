@@ -58,20 +58,27 @@ const getEntity = (word) => {
 }
 
 const codeSnippet = `
-  // Import @zbd/node library
-  import { zbd } from '@zbd/node';
+use std::env;
+use zebedee_rust::{ln_address::*, ZebedeeClient};
 
-  // Create ZBD instance
-  const ZBD = new zbd(API_KEY);
+#[tokio::main]
+async fn main() {
+    let apikey: String = env::var("ZBD_API_KEY").unwrap();
+    let zebedee_client = ZebedeeClient::new().apikey(apikey).build();
 
-  // Send Bitcoin payment
-  const response = await ZBD.sendLightningAddressPayment({
-    amount: 50000,
-    lnAddress: 'andre@zbd.gg',
-    comment: 'Lightning fast!',
-  });
+    // Create a Lightning payment
+    let payment = LnPayment {
+        ln_address: String::from("dannym@zbd.gg"),
+        amount: String::from("10000"),
+        ..Default::default()
+    };
 
-  // Done!
+    // Initiate the payment
+    let payment_res = zebedee_client.pay_ln_address(&payment).await.unwrap();
+    
+    // Print the result
+    println!("Internal transfer result: {:?}", payment_res);
+}
   
 `
 
