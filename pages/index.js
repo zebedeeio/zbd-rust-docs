@@ -142,8 +142,8 @@ export default function HomePage() {
           <code>Cargo.toml</code>.
         </p>
         <p>
-          All you have to do to get started is install <code>zebedee-rust</code>{' '}
-          as a dependency to your Rust-based project. You can do so using{' '}
+          All you have to do to get started is add <code>zebedee-rust</code> as
+          a dependency to your Rust-based project. You can do so using{' '}
           <code>cargo</code>:
         </p>
         <pre>
@@ -163,7 +163,7 @@ export default function HomePage() {
         <p>
           In order to authenticate your Project Wallet with the ZBD API, you
           will need to provide your ZBD Project's API Key to the{' '}
-          <code>@zbd/node</code> SDK.{' '}
+          <code>zebedee-rust</code> SDK.{' '}
           <a
             href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
             target="_blank"
@@ -173,9 +173,10 @@ export default function HomePage() {
           .
         </p>
         <p>
-          First you must import the <code>zbd</code> SDK client into your
-          codebase, and then instantiate it with your Project API Key (replace
-          YOUR_API_KEY_HERE below with your actual ZBD Project's API Key).
+          First you must import the <code>zebedee-rust</code> SDK client into
+          your codebase, and then instantiate it with your Project API Key
+          (replace YOUR_API_KEY_HERE below with your actual ZBD Project's API
+          Key).
         </p>
         <pre>
           <code>
@@ -190,76 +191,9 @@ export default function HomePage() {
         </pre>
         <p>
           You're all set. Now let's move some money at the speed of the
-          internet! Check the <a href="/#playground">Dev Playground</a> or the{' '}
-          <a href="/#api">SDK API Reference</a> below for more information on
-          how to use the <code>@zbd/node</code> SDK.
+          internet! Check the <a href="/#api">SDK API Reference</a> below for
+          more information on how to use the <code>@zbd/node</code> SDK.
         </p>
-
-        {/**
-         * Playground
-         */}
-        <h2 id="playground">
-          <a href="#playground">Dev Playground</a>
-        </h2>
-        <p>
-          The best way to get started using the <code>@zbd/node</code> SDK for
-          the ZBD API is to check out our Dev Playground -- a web-based tool
-          that allows you to test and interact with the <code>@zbd/node</code>{' '}
-          library without writing any code.
-        </p>
-        <p>
-          The Dev Playground has built-in modules and source code showing the
-          usage of the <code>@zbd/node</code> SDK to perform Payins and Payouts
-          in Bitcoin. From creating Charges, to editing Static QR codes, to
-          sending Lightning Address payments -- there's a module for everything.
-        </p>
-        <p>
-          To make the most of the Dev Playground, clone the source code
-          repository to your local machine and{' '}
-          <a
-            href="https://github.com/zebedeeio/nextjs-zebedee-starter/blob/main/README.md"
-            target="_blank"
-          >
-            follow the instructions in the README
-          </a>{' '}
-          to get started.
-        </p>
-        <pre>
-          <code>
-            git clone https://github.com/zebedeeio/nextjs-zebedee-starter.git
-          </code>
-        </pre>
-        <p>
-          Once you've connected your ZBD API Key as a local environment variable
-          and started the Next.js server, you can open your local Dev Playground
-          at{' '}
-          <code>
-            <a href="http://localhost:3000/playground" target="_blank">
-              localhost:3000/playground
-            </a>
-          </code>
-          .
-        </p>
-        <p>
-          You may also check out a LIVE running version of the Dev Playground{' '}
-          <a href="https://nextjs.zbd.dev" target="_blank">
-            here
-          </a>
-          .
-        </p>
-        <img
-          src={'/playground.png'}
-          alt="Dev Playground"
-          className={heroStyles.playgroundWrapper}
-        />
-        <div className={heroStyles.download}>
-          <DownloadButton
-            buttonOne={{
-              label: 'Open Dev Playground',
-              url: 'https://nextjs.zbd.dev',
-            }}
-          />
-        </div>
 
         {/**
          * Project goals
