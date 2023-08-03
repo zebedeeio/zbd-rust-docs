@@ -1,4 +1,4 @@
-<h1 align="center">@zbd/node Docs</h1>
+<h1 align="center">zebedee-rust Docs</h1>
 
 <div align="center">
 <img width="100" src="https://node.zbd.dev/zbd-node-logo.png" />
@@ -7,7 +7,7 @@
 
 <div align="center">
 
-Documentation website for the Node.js library for the ZBD API
+Documentation website for the Rust crate for the ZBD API
 
 <br />
 
@@ -15,9 +15,8 @@ Documentation website for the Node.js library for the ZBD API
 <br/>
 
 <p align="center">
-  <a href="https://node.zbd.dev"><strong>Documentation</strong></a> ·
+  <a href="https://rust.zbd.dev"><strong>Documentation</strong></a> ·
   <a href="https://dashboard.zebedee.io"><strong>Developer Dashboard</strong></a> ·
-  <a href="https://nextjs.zbd.dev"><strong>Dev Playground</strong></a> ·
   <a href="https://status.zebedee.io"><strong>API Status</strong></a>
 </p>
 
@@ -28,13 +27,12 @@ Documentation website for the Node.js library for the ZBD API
 <div align="left">
 <br />
 
-## @zbd/node
+## zebedee-rust
 
-The official documentation website for the ZBD Node.js library [@zbd/node](https://github.com/zebedeeio/zbd-node).
+The official documentation website for the ZBD Rust crate [zebedee-rust](https://github.com/miketwenty1/zebedee-rust).
 
 ![](https://i.imgur.com/5KCQKRI.png)
 
 ## Related Repositories
 
-- [@zbd/node](https://github.com/zebedeeio/zbd-node)
-- [ZBD Next.js Playground](https://github.com/zebedeeio/nextjs-zebedee-starter)
+- [zebedee-rust](https://github.com/miketwenty1/zebedee-rust)
