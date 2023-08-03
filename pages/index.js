@@ -133,27 +133,21 @@ export default function HomePage() {
           <a href="#setup">Getting Started</a>
         </h2>
         <p>
-          The Node.js library for ZBD API is available under{' '}
-          <a href="https://github.com/zebedeeio/zbd-node">
-            <code>@zbd/node</code>
+          The Rust Crate for ZBD API is available under{' '}
+          <a href="https://crates.io/crates/zebedee-rust">
+            <code>zebedee-rust</code>
           </a>
           . When building tools with ZBD support we encourage you to include{' '}
           <code>zbd</code> in the <code>keywords</code> field in{' '}
-          <code>package.json</code>.
+          <code>Cargo.toml</code>.
         </p>
         <p>
-          All you have to do to get started is install <code>@zbd/node</code> as
-          a dependency to your Node.js-based project. You can do so using{' '}
-          <code>npm</code>:
+          All you have to do to get started is install <code>zebedee-rust</code>{' '}
+          as a dependency to your Rust-based project. You can do so using{' '}
+          <code>cargo</code>:
         </p>
         <pre>
-          <code>npm install @zbd/node --save</code>
-        </pre>
-        <p>
-          Or if you are using <code>yarn</code>:
-        </p>
-        <pre>
-          <code>yarn add @zbd/node</code>
+          <code>cargo add zebedee_rust</code>
         </pre>
         <p>
           Now let's authenticate a specific Wallet with that ZBD Project's API
