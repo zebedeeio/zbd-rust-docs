@@ -90,7 +90,7 @@ export default function HomePage() {
        */}
       <div className={heroStyles.root}>
         <img
-          src={'/zbd-node-logo.png'}
+          src={'/zbd-rust-logo.png'}
           alt="ZBD Logo"
           className={heroStyles.logoWrapper}
         />

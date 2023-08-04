@@ -66,9 +66,10 @@
 }
 
 .logoWrapper {
-  width: 90px;
+  width: 180px;
   height: 90px;
   margin: 0 auto;
+  object-fit: contain;
 }
 
 .playgroundWrapper {
