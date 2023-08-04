@@ -5,8 +5,6 @@ import DownloadButton from 'components/download-button'
 import heroStyles from 'styles/pages/home/hero.module.css'
 import contentStyles from 'styles/pages/home/content.module.css'
 import { methods } from 'constants/methods'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { dracula as pdracula } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 const getEntity = (word) => {
   const getColor = (word) => {
@@ -84,18 +82,17 @@ async fn main() {
   
 `
 
-const rustAuthSnippet = `use zebedee_rust::{ZebedeeClient};
+const rustAuthSnippet = `
+use zebedee_rust::{ZebedeeClient};
+
 let zbd_client = ZebedeeClient::new()
   .apikey(YOUR_API_KEY_HERE)
   .build();
 
-let payment = GamertagPayment{
-    gamertag: String from("beaver@zbd.gg"),
-    amount: String::from("10000"),
-    ..Default::default()
-};
+let payment = GamertagPayment{...};
 
 let payment_res = zbd_client.pay_gamertag(&payment).await.unwrap();
+ 
 `
 export default function HomePage() {
   return (
@@ -189,9 +186,16 @@ export default function HomePage() {
           (replace YOUR_API_KEY_HERE below with your actual ZBD Project's API
           Key).
         </p>
-        <SyntaxHighlighter language="rust" style={pdracula}>
-          {rustAuthSnippet}
-        </SyntaxHighlighter>
+        <div className={heroStyles.codeSnippet}>
+          <CopyBlock
+            text={rustAuthSnippet}
+            language={'rust'}
+            showLineNumbers={false}
+            wrapLines
+            theme={dracula}
+          />
+        </div>
+
         <p>
           You're all set. Now let's move some money at the speed of the
           internet! Check the <a href="/#api">SDK API Reference</a> below for
