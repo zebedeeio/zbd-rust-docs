@@ -47,7 +47,7 @@ export default () => {
             href="https://github.com/miketwenty1/zebedee-rust"
             className={styles.link}
           >
-            GitHub&nbsp;zebedee-rust
+            Repo
           </a>
           <ActiveLink href="/#playground">Playground</ActiveLink>
         </nav>
