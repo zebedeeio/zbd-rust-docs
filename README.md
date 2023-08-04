@@ -1,7 +1,7 @@
 <h1 align="center">zebedee-rust Docs</h1>
 
 <div align="center">
-<img width="100" src="https://node.zbd.dev/zbd-node-logo.png" />
+<img width="100" src="https://rust.zbd.dev/zbd-rust-logo.png" />
 </div>
 <br />
 
@@ -11,7 +11,7 @@ Documentation website for the Rust crate for the ZBD API
 
 <br />
 
-[![bitcoin ln payments](https://img.shields.io/badge/Bitcoin%20Lightning-Payments-orange?style=for-the-badge&logo=bitcoin)](https://www.npmjs.com/package/@zbd/node)
+[![bitcoin ln payments](https://img.shields.io/badge/Bitcoin%20Lightning-Payments-orange?style=for-the-badge&logo=bitcoin)](https://crates.io/crates/zebedee-rust)
 <br/>
 
 <p align="center">
