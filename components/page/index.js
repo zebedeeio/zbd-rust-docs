@@ -5,8 +5,8 @@ import { useSearch } from 'lib/search-context'
 
 export default ({
   children,
-  title = '@zbd/node - ZBD Node.js SDK',
-  description = 'The one library you need to use ZBD API in your Node.js project. The SDK provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
+  title = 'zebedee-rust - ZEBEDEE Rust Crate',
+  description = 'The one library you need to use ZBD API in your Rust project. The crate provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
   image = 'https://i.imgur.com/NxlH1SR.png',
 }) => {
   const { search } = useSearch()
@@ -36,7 +36,7 @@ export default ({
         <meta property="og:image" content={image} />
 
         {/* URL */}
-        <meta property="og:url" content="https://node.zbd.dev" />
+        <meta property="og:url" content="https://rust.zbd.dev" />
         <meta name="twitter:site" content="@zebedeeio" />
 
         {/* General */}
@@ -48,7 +48,7 @@ export default ({
         <link
           rel="icon"
           type="image/png"
-          href="https://cdn.zebedee.io/an/zbd/zbd-node-logo.png"
+          href="https://cdn.zebedee.io/an/zbd/zbd-rust-logo.png"
         />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
