@@ -47,7 +47,7 @@ export default () => {
             href="https://github.com/miketwenty1/zebedee-rust"
             className={styles.link}
           >
-            Repo
+            GitHub
           </a>
         </nav>
 
