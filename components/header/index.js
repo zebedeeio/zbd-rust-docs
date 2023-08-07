@@ -44,10 +44,10 @@ export default () => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://github.com/zebedeeio/zbd-node"
+            href="https://github.com/miketwenty1/zebedee-rust"
             className={styles.link}
           >
-            GitHub&nbsp;@zbd/node
+            Repo
           </a>
           <ActiveLink href="/#playground">Playground</ActiveLink>
         </nav>
@@ -73,11 +73,11 @@ export default () => {
       >
         <Link href="/#setup">Installation</Link>
         <Link href="/#api">API</Link>
-        <Link href="https://github.com/zebedeeio/zbd-node" target="_blank">
-          GitHub: @zbd/node
-        </Link>
-        <Link href="https://nextjs.zbd.dev" target="_blank">
-          Dev Playground
+        <Link
+          href="https://github.com/miketwenty1/zebedee-rust"
+          target="_blank"
+        >
+          GitHub: zebedee-rust
         </Link>
         <Link href="https://dashboard.zebedee.io" target="_blank">
           ZEBEDEE Developer Dashboard
