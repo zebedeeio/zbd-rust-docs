@@ -49,7 +49,6 @@ export default () => {
           >
             Repo
           </a>
-          <ActiveLink href="/#playground">Playground</ActiveLink>
         </nav>
 
         <div className={styles.rightNav}>
@@ -59,7 +58,7 @@ export default () => {
             href="https://dashboard.zebedee.io"
             className={styles.link}
           >
-            Developer&nbsp;Dashboard →
+            ZBD Dev&nbsp;Dashboard →
           </a>
         </div>
 
@@ -80,7 +79,7 @@ export default () => {
           GitHub: zebedee-rust
         </Link>
         <Link href="https://dashboard.zebedee.io" target="_blank">
-          ZEBEDEE Developer Dashboard
+          ZBD Dev Dashboard
         </Link>
       </nav>
     </>

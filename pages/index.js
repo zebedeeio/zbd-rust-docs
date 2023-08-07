@@ -58,19 +58,19 @@ const getEntity = (word) => {
 }
 
 const codeSnippet = `
-use std::env;
-use zebedee_rust::{ln_address::*, ZebedeeClient};
+  use std::env;
+  use zebedee_rust::{ln_address::*, ZebedeeClient};
 
-#[tokio::main]
-async fn main() {
+  #[tokio::main]
+  async fn main() {
     let apikey: String = env::var("ZBD_API_KEY").unwrap();
     let zebedee_client = ZebedeeClient::new().apikey(apikey).build();
 
     // Create a Lightning payment
     let payment = LnPayment {
-        ln_address: String::from("dannym@zbd.gg"),
-        amount: String::from("10000"),
-        ..Default::default()
+      ln_address: String::from("dannym@zbd.gg"),
+      amount: String::from("10000"),
+      ..Default::default()
     };
 
     // Initiate the payment
@@ -78,22 +78,23 @@ async fn main() {
     
     // Print the result
     println!("Internal transfer result: {:?}", payment_res);
-}
-  
+  }
+
 `
 
 const rustAuthSnippet = `
-use zebedee_rust::{ZebedeeClient};
+  use zebedee_rust::{ZebedeeClient};
 
-let zbd_client = ZebedeeClient::new()
-  .apikey(YOUR_API_KEY_HERE)
-  .build();
+  let zbd_client = ZebedeeClient::new()
+    .apikey(YOUR_API_KEY_HERE)
+    .build();
 
-let payment = GamertagPayment{...};
+  let payment = GamertagPayment{...};
 
-let payment_res = zbd_client.pay_gamertag(&payment).await.unwrap();
- 
+  let payment_res = zbd_client.pay_gamertag(&payment).await.unwrap();
+
 `
+
 export default function HomePage() {
   return (
     <Page>
@@ -113,7 +114,7 @@ export default function HomePage() {
           <div className={heroStyles.codeSnippet}>
             <CopyBlock
               text={codeSnippet}
-              language={'javascript'}
+              language={'rust'}
               showLineNumbers={false}
               wrapLines
               theme={dracula}
@@ -183,7 +184,7 @@ export default function HomePage() {
         <p>
           First you must import the <code>zebedee-rust</code> crate client into
           your codebase, and then instantiate it with your Project API Key
-          (replace YOUR_API_KEY_HERE below with your actual ZBD Project's API
+          (replace `YOUR_API_KEY_HERE` below with your actual ZBD Project's API
           Key).
         </p>
         <div className={heroStyles.codeSnippet}>
@@ -195,7 +196,7 @@ export default function HomePage() {
             theme={dracula}
           />
         </div>
-
+        <br />
         <p>
           You're all set. Now let's move some money at the speed of the
           internet! Check the <a href="/#api">SDK API Reference</a> below for
@@ -210,18 +211,13 @@ export default function HomePage() {
         </h2>
         <p>
           The goal of the project is to create a beautiful and extensible
-          experience for developers using ZBD APIs in a Rust environment. Our
-          focus will be primarily around providing parity with{' '}
+          experience for developers using ZBD APIs in a Rust environment. The
+          ZBD community has taken on the challenge and built the Rust SDK
+          themselves. The focus is to provide parity with{' '}
           <a href="https://docs.zebedee.io/api/intro" target="_blank">
             ZBD REST API
           </a>
           , as well as providing further stability for developers.
-        </p>
-        <p>
-          In the future, we anticipate adding zebedee-rust-only APIs to this
-          crate. We also anticipate the community will come up with innovative
-          additions to enhance what could be the simplest and most powerful
-          Bitcoin payments API.
         </p>
 
         {/**
