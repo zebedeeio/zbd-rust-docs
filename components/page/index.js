@@ -45,11 +45,7 @@ export default ({
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* Favicon */}
-        <link
-          rel="icon"
-          type="image/png"
-          href="https://cdn.zebedee.io/an/zbd/zbd-rust-logo.png"
-        />
+        <link rel="icon" href="https://rust.zbd.dev/favicon.ico" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
         <meta name="theme-color" content="#000000" />
