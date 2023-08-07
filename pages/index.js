@@ -58,23 +58,42 @@ const getEntity = (word) => {
 }
 
 const codeSnippet = `
-  // Import @zbd/node library
-  import { zbd } from '@zbd/node';
+use std::env;
+use zebedee_rust::{ln_address::*, ZebedeeClient};
 
-  // Create ZBD instance
-  const ZBD = new zbd(API_KEY);
+#[tokio::main]
+async fn main() {
+    let apikey: String = env::var("ZBD_API_KEY").unwrap();
+    let zebedee_client = ZebedeeClient::new().apikey(apikey).build();
 
-  // Send Bitcoin payment
-  const response = await ZBD.sendLightningAddressPayment({
-    amount: 50000,
-    lnAddress: 'andre@zbd.gg',
-    comment: 'Lightning fast!',
-  });
+    // Create a Lightning payment
+    let payment = LnPayment {
+        ln_address: String::from("dannym@zbd.gg"),
+        amount: String::from("10000"),
+        ..Default::default()
+    };
 
-  // Done!
+    // Initiate the payment
+    let payment_res = zebedee_client.pay_ln_address(&payment).await.unwrap();
+    
+    // Print the result
+    println!("Internal transfer result: {:?}", payment_res);
+}
   
 `
 
+const rustAuthSnippet = `
+use zebedee_rust::{ZebedeeClient};
+
+let zbd_client = ZebedeeClient::new()
+  .apikey(YOUR_API_KEY_HERE)
+  .build();
+
+let payment = GamertagPayment{...};
+
+let payment_res = zbd_client.pay_gamertag(&payment).await.unwrap();
+ 
+`
 export default function HomePage() {
   return (
     <Page>
@@ -83,7 +102,7 @@ export default function HomePage() {
        */}
       <div className={heroStyles.root}>
         <img
-          src={'/zbd-node-logo.png'}
+          src={'/zbd-rust-logo.png'}
           alt="ZBD Logo"
           className={heroStyles.logoWrapper}
         />
@@ -103,11 +122,7 @@ export default function HomePage() {
         </div>
         <div className={heroStyles.download}>
           <DownloadButton
-            buttonOne={{ label: 'View SDK Docs', url: '/#api' }}
-            buttonTwo={{
-              label: 'Open Playground',
-              url: 'https://nextjs.zbd.dev',
-            }}
+            buttonOne={{ label: 'View Crate Docs', url: '/#api' }}
           />
           <a className={heroStyles.other} href="#sdks">
             View other SDK options
@@ -126,27 +141,21 @@ export default function HomePage() {
           <a href="#setup">Getting Started</a>
         </h2>
         <p>
-          The Node.js library for ZBD API is available under{' '}
-          <a href="https://github.com/zebedeeio/zbd-node">
-            <code>@zbd/node</code>
+          The Rust Crate for ZBD API is available under{' '}
+          <a href="https://crates.io/crates/zebedee-rust">
+            <code>zebedee-rust</code>
           </a>
           . When building tools with ZBD support we encourage you to include{' '}
           <code>zbd</code> in the <code>keywords</code> field in{' '}
-          <code>package.json</code>.
+          <code>Cargo.toml</code>.
         </p>
         <p>
-          All you have to do to get started is install <code>@zbd/node</code> as
-          a dependency to your Node.js-based project. You can do so using{' '}
-          <code>npm</code>:
+          All you have to do to get started is add <code>zebedee-rust</code> as
+          a dependency to your Rust-based project. You can do so using{' '}
+          <code>cargo</code>:
         </p>
         <pre>
-          <code>npm install @zbd/node --save</code>
-        </pre>
-        <p>
-          Or if you are using <code>yarn</code>:
-        </p>
-        <pre>
-          <code>yarn add @zbd/node</code>
+          <code>cargo add zebedee_rust</code>
         </pre>
         <p>
           Now let's authenticate a specific Wallet with that ZBD Project's API
@@ -162,7 +171,7 @@ export default function HomePage() {
         <p>
           In order to authenticate your Project Wallet with the ZBD API, you
           will need to provide your ZBD Project's API Key to the{' '}
-          <code>@zbd/node</code> SDK.{' '}
+          <code>zebedee-rust</code> crate.{' '}
           <a
             href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
             target="_blank"
@@ -172,103 +181,36 @@ export default function HomePage() {
           .
         </p>
         <p>
-          First you must import the <code>zbd</code> SDK client into your
-          codebase, and then instantiate it with your Project API Key (replace
-          YOUR_API_KEY_HERE below with your actual ZBD Project's API Key).
+          First you must import the <code>zebedee-rust</code> crate client into
+          your codebase, and then instantiate it with your Project API Key
+          (replace YOUR_API_KEY_HERE below with your actual ZBD Project's API
+          Key).
         </p>
-        <pre>
-          <code>
-            import {'{'} zbd {'}'} from '@zbd/node'
-            {'\n'}
-            {'\n'}
-            const ZBD = new zbd(<b>YOUR_API_KEY_HERE</b>){'\n'}
-            {'\n'}
-            const payment = await ZBD.sendPayment{'( ... )'}
-            {'\n'}
-          </code>
-        </pre>
-        <p>
-          You're all set. Now let's move some money at the speed of the
-          internet! Check the <a href="/#playground">Dev Playground</a> or the{' '}
-          <a href="/#api">SDK API Reference</a> below for more information on
-          how to use the <code>@zbd/node</code> SDK.
-        </p>
-
-        {/**
-         * Playground
-         */}
-        <h2 id="playground">
-          <a href="#playground">Dev Playground</a>
-        </h2>
-        <p>
-          The best way to get started using the <code>@zbd/node</code> SDK for
-          the ZBD API is to check out our Dev Playground -- a web-based tool
-          that allows you to test and interact with the <code>@zbd/node</code>{' '}
-          library without writing any code.
-        </p>
-        <p>
-          The Dev Playground has built-in modules and source code showing the
-          usage of the <code>@zbd/node</code> SDK to perform Payins and Payouts
-          in Bitcoin. From creating Charges, to editing Static QR codes, to
-          sending Lightning Address payments -- there's a module for everything.
-        </p>
-        <p>
-          To make the most of the Dev Playground, clone the source code
-          repository to your local machine and{' '}
-          <a
-            href="https://github.com/zebedeeio/nextjs-zebedee-starter/blob/main/README.md"
-            target="_blank"
-          >
-            follow the instructions in the README
-          </a>{' '}
-          to get started.
-        </p>
-        <pre>
-          <code>
-            git clone https://github.com/zebedeeio/nextjs-zebedee-starter.git
-          </code>
-        </pre>
-        <p>
-          Once you've connected your ZBD API Key as a local environment variable
-          and started the Next.js server, you can open your local Dev Playground
-          at{' '}
-          <code>
-            <a href="http://localhost:3000/playground" target="_blank">
-              localhost:3000/playground
-            </a>
-          </code>
-          .
-        </p>
-        <p>
-          You may also check out a LIVE running version of the Dev Playground{' '}
-          <a href="https://nextjs.zbd.dev" target="_blank">
-            here
-          </a>
-          .
-        </p>
-        <img
-          src={'/playground.png'}
-          alt="Dev Playground"
-          className={heroStyles.playgroundWrapper}
-        />
-        <div className={heroStyles.download}>
-          <DownloadButton
-            buttonOne={{
-              label: 'Open Dev Playground',
-              url: 'https://nextjs.zbd.dev',
-            }}
+        <div className={heroStyles.codeSnippet}>
+          <CopyBlock
+            text={rustAuthSnippet}
+            language={'rust'}
+            showLineNumbers={false}
+            wrapLines
+            theme={dracula}
           />
         </div>
+
+        <p>
+          You're all set. Now let's move some money at the speed of the
+          internet! Check the <a href="/#api">SDK API Reference</a> below for
+          more information on how to use the <code>zebedee-rust</code> crate.
+        </p>
 
         {/**
          * Project goals
          */}
         <h2 id="goals">
-          <a href="#goals">@zbd/node</a>
+          <a href="#goals">zebedee-rust</a>
         </h2>
         <p>
           The goal of the project is to create a beautiful and extensible
-          experience for developers using ZBD APIs in a Node.js environment. Our
+          experience for developers using ZBD APIs in a Rust environment. Our
           focus will be primarily around providing parity with{' '}
           <a href="https://docs.zebedee.io/api/intro" target="_blank">
             ZBD REST API
@@ -276,10 +218,10 @@ export default function HomePage() {
           , as well as providing further stability for developers.
         </p>
         <p>
-          In the future, we anticipate adding Node.js-only APIs to this SDK. We
-          also anticipate the community will come up with innovative additions
-          to enhance what could be the simplest and most powerful Bitcoin
-          payments API.
+          In the future, we anticipate adding zebedee-rust-only APIs to this
+          crate. We also anticipate the community will come up with innovative
+          additions to enhance what could be the simplest and most powerful
+          Bitcoin payments API.
         </p>
 
         {/**
@@ -290,9 +232,9 @@ export default function HomePage() {
         </h2>
         <p>
           Below is a comprehensive list of the methods and functions available
-          in the <code>@zbd/node</code> SDK. These methods are ONLY available to
-          the <code>zbd</code> client instance after it's been properly
-          authenticated with a Project's API Key.
+          in the <code>zebedee-rust</code> crate. These methods are ONLY
+          available to the <code>ZebedeeClient</code> client instance after it's
+          been properly authenticated with a Project's API Key.
         </p>
         <div className="table large">
           <table className="api">
@@ -367,10 +309,10 @@ export default function HomePage() {
           Feature Request? Bugfix? Recommendations? We're all ears! Head on over
           to the{' '}
           <a
-            href="https://github.com/zebedeeio/zbd-node/issues"
+            href="https://github.com/miketwenty1/zebedee-rust/issues"
             target="_blank"
           >
-            @zbd/node Issues
+            zebedee-rust Issues
           </a>{' '}
           page and submit one. We also welcome Pull Requests and other
           contributions to the library.
@@ -379,8 +321,8 @@ export default function HomePage() {
         <div className={heroStyles.download}>
           <DownloadButton
             buttonOne={{
-              label: 'SDK Source Code',
-              url: 'https://github.com/zebedeeio/zbd-node/',
+              label: 'Crate Source Code',
+              url: 'https://github.com/miketwenty1/zebedee-rust',
             }}
           />
           <a
