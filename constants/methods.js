@@ -4,6 +4,12 @@ export const methods = [
     entity: 'Charge',
     description:
       'Creates a new Charge / Payment Request in the Bitcoin Lightning Network, payable by any Bitcoin Lightning wallet.',
+    struct: [
+      {
+        name: 'charge: &Charge',
+        description: 'The Charge reference containing the required parameters.',
+      },
+    ],
     params: [
       {
         name: 'charge: &Charge',
@@ -44,10 +50,10 @@ export const methods = [
       'A Withdrawal Request is a QR code that allows someone to scan and receive Bitcoin (e.g. Withdrawals).',
     params: [
       {
-        name: 'withdrawl_request: &WithdrawalRequest',
+        name: 'withdrawal_request: &WithdrawalRequest',
         extra: 'required',
         description:
-          'The WithdrwawlRequest reference containing the required parameters.',
+          'The WithdrawalRequest reference containing the required parameters.',
       },
     ],
     examples: [

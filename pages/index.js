@@ -250,9 +250,32 @@ export default function HomePage() {
                   <td>{getEntity(method.entity)}</td>
                   <td>
                     <p>{method.description}</p>
+                    {method.struct && method.struct.length > 0 && (
+                      <>
+                        <p>
+                          <b>Struct:</b>
+                        </p>
+                        <table className="params">
+                          <tbody>
+                            {method.struct.map((struct) => (
+                              <tr>
+                                <td>
+                                  <code>{struct.name}</code>
+                                </td>
+                                <td>{struct.description}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                        <br />
+                        <br />
+                      </>
+                    )}
                     {method.params && method.params.length > 0 && (
                       <>
-                        <p>Parameters:</p>
+                        <p>
+                          <b>Parameters:</b>
+                        </p>
                         <table className="params">
                           <tbody>
                             {method.params.map((param) => (
