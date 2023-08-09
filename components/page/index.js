@@ -6,7 +6,7 @@ import { useSearch } from 'lib/search-context'
 export default ({
   children,
   title = 'ZBD Rust Crate - zebedee-rust',
-  description = 'The one library you need to use ZBD API in your Rust project. The crate provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
+  description = 'Use ZBD API in your Rust project. The crate provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
   image = 'https://i.imgur.com/0Y9behL.png',
 }) => {
   const { search } = useSearch()
