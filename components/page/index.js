@@ -5,9 +5,9 @@ import { useSearch } from 'lib/search-context'
 
 export default ({
   children,
-  title = 'zebedee-rust - ZEBEDEE Rust Crate',
+  title = 'ZBD Rust Crate - zebedee-rust',
   description = 'The one library you need to use ZBD API in your Rust project. The crate provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
-  image = 'https://i.imgur.com/NxlH1SR.png',
+  image = 'https://i.imgur.com/0Y9behL.png',
 }) => {
   const { search } = useSearch()
 
@@ -45,7 +45,11 @@ export default ({
         <meta name="twitter:card" content="summary_large_image" />
 
         {/* Favicon */}
-        <link rel="icon" href="https://rust.zbd.dev/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          href="https://cdn.zebedee.io/zbdgg/zbdgg.png"
+        />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
         <meta name="theme-color" content="#000000" />
