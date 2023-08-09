@@ -7,14 +7,7 @@ export default () => (
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/zebedeeio/zbd-node/releases"
-        >
-          Changelog
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/zebedeeio/zbd-node"
+          href="https://github.com/miketwenty1/zebedee-rust"
         >
           GitHub
         </a>
