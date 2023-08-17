@@ -31,7 +31,7 @@ Documentation website for the Rust crate for the ZBD API
 
 The official documentation website for the ZBD Rust crate [zebedee-rust](https://github.com/miketwenty1/zebedee-rust).
 
-![](https://i.imgur.com/5KCQKRI.png)
+![](https://i.imgur.com/L0bC465.png)
 
 ## Related Repositories
 
