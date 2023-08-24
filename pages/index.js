@@ -173,10 +173,7 @@ export default function HomePage() {
           In order to authenticate your Project Wallet with the ZBD API, you
           will need to provide your ZBD Project's API Key to the{' '}
           <code>zebedee-rust</code> crate.{' '}
-          <a
-            href="https://docs.zebedee.io/docs/docs/dashboard-project-api"
-            target="_blank"
-          >
+          <a href="https://zbd.dev/docs/dashboard/projects/api" target="_blank">
             You can find your Project API Key in the ZBD Developer Dashboard
           </a>
           .
@@ -214,7 +211,7 @@ export default function HomePage() {
           experience for developers using ZBD APIs in a Rust environment. The
           ZBD community has taken on the challenge and built the Rust SDK
           themselves. The focus is to provide parity with{' '}
-          <a href="https://docs.zebedee.io/api/intro" target="_blank">
+          <a href="https://zbd.dev/api-reference/introduction" target="_blank">
             ZBD REST API
           </a>
           , as well as providing further stability for developers.
