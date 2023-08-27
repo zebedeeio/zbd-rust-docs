@@ -7,7 +7,7 @@ export default ({
   children,
   title = 'ZBD Rust Crate - zebedee-rust',
   description = 'Use ZBD API in your Rust project. The crate provides everything necessary to start adding instant Bitcoin payments to your application, game, or platform.',
-  image = 'https://i.imgur.com/0Y9behL.png',
+  image = 'https://i.imgur.com/aHUXe3z.jpg',
 }) => {
   const { search } = useSearch()
 
